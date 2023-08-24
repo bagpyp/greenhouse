@@ -9,6 +9,9 @@ properties = {}
 def initialize():
     global properties
 
+    # constants
+    properties["TIME_FORMAT"] = "%Y-%m-%d %H:%M:%S"
+
     # machine specific
     root_dir = pathlib.Path(__file__).parents[2]
     properties["ROOT_DIR"] = root_dir
