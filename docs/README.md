@@ -1,4 +1,6 @@
-#     
+# Greenhouse simulator
+
+![plot](plot.png)
 
 ## Requirements
 
