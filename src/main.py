@@ -5,13 +5,14 @@ from api.weather_api import WeatherAPI
 from config.properties import properties, initialize
 from models.greenhouse import Greenhouse
 from models.sensor import Sensor
+from view.plot import plot
 
 # load api key from .env
 initialize()
 
 # greenhouse location (Portland for example)
-LATITUDE = 45.5152
-LONGITUDE = -122.6784
+LATITUDE, LONGITUDE = -122.6784, 45.5152
+LOW, HIGH = 70, 71
 
 
 def main():
@@ -64,14 +65,15 @@ def main():
         )
 
         # basic heating/cooling control logic
-        if internal_sensor.reading < 69:  # lower limit
+        if internal_sensor.reading < LOW:  # lower limit
             greenhouse.activate_heating()
-        elif internal_sensor.reading > 71:  # upper limit
+        elif internal_sensor.reading > HIGH:  # upper limit
             greenhouse.activate_cooling()
         else:
             greenhouse.deactivate_systems()
 
     pprint(results)
+    plot(results)
 
 
 if __name__ == "__main__":
