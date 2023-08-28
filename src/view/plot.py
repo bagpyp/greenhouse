@@ -63,7 +63,7 @@ def plot(results):
         # update time label
         time_label.set_text(timestamps[i])
 
-        time.sleep(1)
+        time.sleep(0.5)
 
     ani = FuncAnimation(fig, animate, frames=len(inside_temps))
 

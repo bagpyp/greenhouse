@@ -11,8 +11,9 @@ from view.plot import plot
 initialize()
 
 # greenhouse location (Portland for example)
-LATITUDE, LONGITUDE = -122.6784, 45.5152
-LOW, HIGH = 70, 71
+LATITUDE = 45.5152
+LONGITUDE = -122.6784
+LOW, HIGH = 72, 75
 
 
 def main():
